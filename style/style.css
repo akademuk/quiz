@@ -160,7 +160,6 @@
     transform: translate(-50%, -50%);
     opacity: 0;
     /* Скрываем внутренний круг */
-    transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
 .custom-radio input[type="radio"]:checked+.radio-indicator {
