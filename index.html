@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body class="quiz-body">
+
+    <section class="quiz-page">
+        <div class="wrapper">
+            <div class="quiz-page__left">
+                <a href="#">
+                    <img src="img/logo.svg" alt="urbanist">
+                </a>
+            </div>
+            <div class="quiz-page__center">
+                <picture>
+                    <!-- WebP версия для десктопов -->
+                    <source srcset="img/img-des.webp" type="image/webp" media="(min-width: 1280px)">
+                    <!-- PNG/JPEG версия для десктопов как fallback -->
+                    <source srcset="img/img-des.png" media="(min-width: 1280px)">
+
+                    <!-- WebP версия для мобильных устройств -->
+                    <source srcset="img/img-mob.webp" type="image/webp" media="(max-width: 1279px)">
+                    <!-- PNG/JPEG версия для мобильных устройств как fallback -->
+                    <source srcset="img/img-mob.png" media="(max-width: 1279px)">
+
+                    <!-- Изображение по умолчанию для старых браузеров -->
+                    <img src="img/img-des.png" alt="Описание изображения">
+                </picture>
+            </div>
+            <div class="quiz-page__right">
+                <form id="quiz-form">
+                    <!-- Шаг 1: Яке ваше місто? -->
+                    <div class="quiz-step" id="step-city">
+                        <h2>Яке ваше місто?</h2>
+                        <div class="quiz-step__box">
+                            <label class="custom-radio">
+                                <input type="radio" name="city" value="Kyiv" required>
+                                <span class="radio-indicator"></span>
+                                <span>Київ</span>
+                            </label>
+                            <label class="custom-radio">
+                                <input type="radio" name="city" value="Dnipro" required>
+                                <span class="radio-indicator"></span>
+                                <span>Дніпро</span>
+                            </label>
+                            <label class="custom-radio">
+                                <input type="radio" name="city" value="Odessa" required>
+                                <span class="radio-indicator"></span>
+                                <span>Одеса</span>
+                            </label>
+                            <label class="custom-radio">
+                                <input type="radio" name="city" value="Lviv" required>
+                                <span class="radio-indicator"></span>
+                                <span>Львів</span>
+                            </label>
+                        </div>
+                        <div class="quiz-step__nav">
+                            <!-- Индикатор шагов -->
+                            <div class="step-indicator">
+                                Крок <span class="current-step">1</span> з 4
+                            </div>
+                            <button type="button" id="next-city" disabled>Наступний крок <img src="img/arrow.svg" alt="icon"></button>
+                        </div>
+                    </div>
+
+                    <!-- Шаг 2: Яка сфера вашого бізнесу? -->
+                    <div class="quiz-step" id="step-business" style="display:none;">
+                        <h2>Яка сфера вашого бізнесу? </h2>
+                        <div class="quiz-step__box">
+                            <input type="text" name="businessSector" placeholder="Почніть вводити текст" required>
+                        </div>
+                        <div class="quiz-step__nav">
+                            <!-- Индикатор шагов -->
+                            <div class="step-indicator">
+                                Крок <span class="current-step">2</span> з 4
+                            </div>
+                            <div class="quiz-step__btn">
+                                <button type="button" id="prev-business"><img src="img/left-arrow.svg" alt="icon">Попередній крок</button>
+                                <button type="button" id="next-business" disabled>Наступний крок<img src="img/arrow.svg" alt="icon"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Шаг 3: Які проблеми потрібно вирішити? -->
+                    <div class="quiz-step" id="step-problems" style="display:none;">
+                        <h2>Які проблеми потрібно вирішити?</h2>
+                        <div class="quiz-step__box">
+                            <label class="custom-radio">
+                                <input type="radio" name="problems" value="IncreaseRepeatSales" required>
+                                <span class="radio-indicator"></span>
+                                <span>Збільшення повторних продажів</span>
+                            </label>
+                            <label class="custom-radio">
+                                <input type="radio" name="problems" value="CustomerRetention" required>
+                                <span class="radio-indicator"></span>
+                                <span> Утримання клієнтів</span>
+                            </label>
+                            <label class="custom-radio">
+                                <input type="radio" name="problems" value="BusinessExpansion" required>
+                                <span class="radio-indicator"></span>
+                                <span> Розширення бізнесу </span>
+                            </label>
+                            <label class="custom-radio">
+                                <input type="radio" name="problems" value="IncreaseAwareness" required>
+                                <span class="radio-indicator"></span>
+                                <span>Підвищення упізнаваності</span>
+                            </label>
+                            <label class="custom-radio">
+                                <input type="radio" name="problems" value="Other" required>
+                                <span class="radio-indicator"></span>
+                                <span>Інше</span>
+                            </label>
+                        </div>
+                        <div class="quiz-step__nav">
+                            <!-- Индикатор шагов -->
+                            <div class="step-indicator">
+                                Крок <span class="current-step">3</span> з 4
+                            </div>
+                            <div class="quiz-step__btn">
+                                <button type="button" id="prev-problems"><img src="img/left-arrow.svg" alt="icon">Попередній крок</button>
+                                <button type="button" id="next-problems" disabled>Наступний крок<img src="img/arrow.svg" alt="icon"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Шаг 4: Залиште свої контакти для зв'язку -->
+                    <div class="quiz-step" id="step-contacts" style="display:none;">
+                        <h2>Залиште свої контакти для зв‘язку:</h2>
+                        <div class="quiz-step__box">
+                            <label>
+                                <input type="text" name="name" placeholder="Ім‘я" required>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                    <path d="M11.3065 5.23324C11.3065 7.22623 9.70856 8.82428 7.71417 8.82428C5.72046 8.82428 4.12182 7.22623 4.12182 5.23324C4.12182 3.24026 5.72046 1.64288 7.71417 1.64288C9.70856 1.64288 11.3065 3.24026 11.3065 5.23324Z" fill="#B7ADC1"/>
+                                    <path d="M7.71422 15.2142C4.77083 15.2142 2.28564 14.7359 2.28564 12.8901C2.28564 11.0437 4.78644 10.5823 7.71422 10.5823C10.6583 10.5823 13.1428 11.0607 13.1428 12.9064C13.1428 14.7528 10.642 15.2142 7.71422 15.2142Z" fill="#B7ADC1"/>
+                                </svg>
+                            </label>
+                            <label>
+                                <input type="tel" name="phone" placeholder="Номер" required>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                    <path d="M14.3172 11.6186L12.4526 9.75792C11.7866 9.09338 10.6545 9.35922 10.3882 10.2231C10.1884 10.8212 9.52245 11.1535 8.92311 11.0205C7.59124 10.6883 5.79321 8.96047 5.46024 7.56495C5.26046 6.96684 5.66002 6.3023 6.25936 6.10296C7.12508 5.83715 7.39146 4.70744 6.72552 4.0429L4.8609 2.1822C4.32815 1.71702 3.52903 1.71702 3.06287 2.1822L1.79759 3.44482C0.532313 4.77389 1.93078 8.29594 5.06068 11.4193C8.19058 14.5426 11.72 16.0046 13.0519 14.6755L14.3172 13.4129C14.7834 12.8812 14.7834 12.0838 14.3172 11.6186Z" fill="#B7ADC1"/>
+                                </svg>
+                            </label>
+                            <label>
+                                <input type="email" name="email" placeholder="Пошта" required>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                    <path d="M1.569 7.98019L4.64127 9.12685L5.83043 12.9512C5.90652 13.1961 6.20603 13.2866 6.40483 13.1241L8.11737 11.728C8.29688 11.5817 8.55257 11.5745 8.74017 11.7106L11.829 13.9532C12.0416 14.1077 12.3429 13.9912 12.3963 13.7342L14.659 2.85018C14.7172 2.56947 14.4414 2.33529 14.1741 2.43867L1.5654 7.30272C1.25425 7.42272 1.25696 7.86325 1.569 7.98019ZM5.63879 8.51645L11.6431 4.81836C11.7511 4.75209 11.8621 4.898 11.7694 4.98396L6.81408 9.59019C6.6399 9.75232 6.52754 9.9693 6.49572 10.2048L6.32692 11.4557C6.30456 11.6228 6.06994 11.6393 6.02385 11.4777L5.37465 9.19659C5.3003 8.93641 5.40865 8.6585 5.63879 8.51645Z" fill="#B7ADC1"/>
+                                </svg>
+                            </label>
+                        </div>
+                        <div class="quiz-step__nav">
+                            <!-- Индикатор шагов -->
+                            <div class="step-indicator">
+                                Крок <span class="current-step">4</span> з 4
+                            </div>
+                            <div class="quiz-step__btn">
+                                <button type="button" id="prev-contacts"><img src="img/left-arrow.svg" alt="icon">Попередній крок</button>
+                                <button type="submit" id="submit" disabled>Надіслати<img src="img/arrow.svg" alt="icon"></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="script/main.js"></script>
+</body>
+
+</html>

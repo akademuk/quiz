@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body class="quiz-body">
+
+    <section class="quiz-page thank-you">
+        <div class="wrapper">
+            <div class="quiz-page__left thank-you__left">
+                <picture>
+                    <!-- WebP версия для десктопов -->
+                    <source srcset="img/thank-you-img-des.webp" type="image/webp" media="(min-width: 1280px)">
+                    <!-- PNG/JPEG версия для десктопов как fallback -->
+                    <source srcset="img/thank-you-img-des.png" media="(min-width: 1280px)">
+
+                    <!-- WebP версия для мобильных устройств -->
+                    <source srcset="img/thank-you-img-mob.webp" type="image/webp" media="(max-width: 1279px)">
+                    <!-- PNG/JPEG версия для мобильных устройств как fallback -->
+                    <source srcset="img/thank-you-img-mob.png" media="(max-width: 1279px)">
+
+                    <!-- Изображение по умолчанию для старых браузеров -->
+                    <img src="img/img-des.png" alt="Описание изображения">
+                </picture>
+            </div>
+            <div class="quiz-page__center thank-you__center">
+                <a href="#">
+                    <img src="img/logo.svg" alt="urbanist">
+                </a>
+                <div class="thank-you__center-title">
+                    <h1>Дякуємо!</h1>
+                    <p>Менеджер зв'яжеться з вами найближчим часом</p>
+                </div>
+                <a href="index.html">Повторити опитування</a>
+                <div class="quiz-page__right thank-you__right">
+                    <img src="img/thank-img.svg" alt="image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
